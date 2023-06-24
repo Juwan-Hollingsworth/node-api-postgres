@@ -1,8 +1,9 @@
 const Pool = require("pg").Pool;
 const config = require("./config");
+//establish connection to Postgres
 const pool = new Pool({ config });
 
-// creating endpoints for CRUD operations
+/* Creating endpoints for CRUD operations*/
 
 //Get all users f(x)
 const getUsers = (request, response) => {
