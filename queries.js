@@ -16,3 +16,15 @@ const getUsers = (request, response) => {
     response.status(200).json(results.rows);
   });
 };
+// Get user data provided userID
+const getUsersById = (request, response) => {
+  //extract id from request.params obj
+  const id = parseInt(request.params.id);
+  /*execute SQL query against db : select all cols from table where the id matches*/
+  pool.query("SELECT * FROM users WHERE id = $1", [id], (error, results) => {
+    if (error) {
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  });
+};
