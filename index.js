@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 //parse url encoded data also
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// setup route handler for GET requests to ("/")
 app.get("/", (request, response) => {
   response.json({ info: "Node.js, Express, and Postgres API" });
 });
